@@ -1,0 +1,9 @@
+@import "vars";
+@import "mixins";
+
+:host {
+  @include container;
+  max-width: $s-width;
+  margin-left: auto;
+  margin-right: auto;
+}

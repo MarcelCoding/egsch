@@ -11,8 +11,12 @@
     "paths": {
       "@egsch/layout": [
         "dist/layout"
+      ],
+      "@egsch/base": [
+        "dist/base"
       ]
     },
+    "resolveJsonModule": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
