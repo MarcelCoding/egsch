@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "layout": {
+    "@egsch/layout": {
       "projectType": "library",
-      "root": "projects/layout",
-      "sourceRoot": "projects/layout/src",
+      "root": "projects/egsch/layout",
+      "sourceRoot": "projects/egsch/layout/src",
       "prefix": "egsch",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/layout/ng-package.json",
+            "project": "projects/egsch/layout/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/layout/tsconfig.lib.prod.json"
+              "tsConfig": "projects/egsch/layout/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/layout/tsconfig.lib.json"
+              "tsConfig": "projects/egsch/layout/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,7 +27,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/layout/tsconfig.spec.json",
+            "tsConfig": "projects/egsch/layout/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -67,7 +67,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "dist/base/styles/globals"
+                "dist/egsch/base/styles/globals"
               ]
             },
             "scripts": []
@@ -143,23 +143,23 @@
         }
       }
     },
-    "base": {
+    "@egsch/base": {
       "projectType": "library",
-      "root": "projects/base",
-      "sourceRoot": "projects/base/src",
+      "root": "projects/egsch/base",
+      "sourceRoot": "projects/egsch/base/src",
       "prefix": "egsch",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/base/ng-package.json"
+            "project": "projects/egsch/base/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/base/tsconfig.lib.prod.json"
+              "tsConfig": "projects/egsch/base/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/base/tsconfig.lib.json"
+              "tsConfig": "projects/egsch/base/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -167,7 +167,40 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/base/tsconfig.spec.json",
+            "tsConfig": "projects/egsch/base/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "@egsch/data": {
+      "projectType": "library",
+      "root": "projects/egsch/data",
+      "sourceRoot": "projects/egsch/data/src",
+      "prefix": "egsch",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/egsch/data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/egsch/data/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/egsch/data/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/egsch/data/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"

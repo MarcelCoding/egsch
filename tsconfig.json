@@ -10,10 +10,13 @@
     "noPropertyAccessFromIndexSignature": true,
     "paths": {
       "@egsch/layout": [
-        "dist/layout"
+        "dist/egsch/layout"
+      ],
+      "@egsch/data": [
+        "dist/egsch/data"
       ],
       "@egsch/base": [
-        "dist/base"
+        "dist/egsch/base"
       ]
     },
     "resolveJsonModule": true,
