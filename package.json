@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ci": "ng build layout && ng build showcase",
+    "build:ci": "ng build @egsch/base && ng build @egsch/data && ng build @egsch/layout && ng build showcase",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
