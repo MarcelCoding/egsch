@@ -28,7 +28,7 @@ jobs:
 #
 #    strategy:
 #      matrix:
-#        node: [ 16, 18 ]
+#        node: [ 18 ]
 #
 #    steps:
 #      - uses: actions/checkout@v3
@@ -50,6 +50,21 @@ jobs:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2.4.0
 
+      - name: Find Version
+        if: startsWith(github.ref, 'refs/tags/')
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: image
+          tags: type=semver,pattern={{version}}
+
+      - name: Set Cargo.toml version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -i'' "s/0\\.0\\.0-git/${{ steps.meta.outputs.version }}/" projects/egsch/base/package.json
+          sed -i'' "s/0\\.0\\.0-git/${{ steps.meta.outputs.version }}/" projects/egsch/data/package.json
+          sed -i'' "s/0\\.0\\.0-git/${{ steps.meta.outputs.version }}/" projects/egsch/layout/package.json
+
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
@@ -62,3 +77,31 @@ jobs:
         with:
           name: egsch
           path: dist
+
+  publish:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+
+    strategy:
+      matrix:
+        module: [base, data, layout]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.4.0
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: egsch
+          path: dist
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: pnpm publish --no-git-checks --access=public
+        working-directory: dist/egsch/${{ matrix.module }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
