@@ -1,40 +1,4 @@
-:root {
-  --c-primary: #f16827;
-  --c-primary-l: #f16827;
-  --c-primary-d: #f16827;
+@import "theme";
+@import "dist/egsch/base/styles/main.scss";
 
-  --c-secondary: #000;
-  --c-secondary-l: #000;
-  --c-secondary-d: #000;
-
-  --c-ternary: #fff;
-  --c-ternary-l: #fff;
-  --c-ternary-d: #fff;
-
-  --c-good: #2f9617;
-  --c-good-l: #3ec91f;
-  --c-good-d: #277e14;
-
-  --c-danger: #b0151f;
-  --c-danger-l: #ef2149;
-  --c-danger-d: #770a1f;
-
-  --f-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --f-family-mono: "DM Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --f-size: 1rem;
-  --f-size-small: 0.9rem;
-  --f-size-mono: 1rem;
-  --f-weight: 400;
-  --f-weight-bold: 700;
-
-  --s-unit: 1rem;
-  --s-content: calc(1000 * var(--s-unit) / 16);
-  --s-padding: var(--s-unit);
-
-  --c-page: #fff;
-  --c-card: #fff;
-  --c-card-secondary: #fff;
-  --c-control: #fff;
-  --c-control-secondary: #fff;
-  --c-control-ternary: #fff;
-}
+@include theme();
