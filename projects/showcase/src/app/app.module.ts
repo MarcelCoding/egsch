@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {FixedGridComponent, PageWrapperComponent} from "@egsch/layout";
+import {CardComponent, FixedGridComponent, PageWrapperComponent, ContainerComponent} from "@egsch/layout";
 
 @NgModule({
   declarations: [
@@ -13,6 +13,8 @@ import {FixedGridComponent, PageWrapperComponent} from "@egsch/layout";
     AppRoutingModule,
     FixedGridComponent,
     PageWrapperComponent,
+    CardComponent,
+    ContainerComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

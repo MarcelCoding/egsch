@@ -2,12 +2,12 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 @Component({
-  selector: 'egsch-page-wrapper',
+  selector: 'egsch-container',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './page-wrapper.component.html',
-  styleUrls: ['./page-wrapper.component.scss'],
+  templateUrl: './container.component.html',
+  styleUrls: ['./container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PageWrapperComponent {
+export class ContainerComponent {
 }

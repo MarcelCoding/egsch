@@ -7,10 +7,13 @@
 }
 
 body {
-  background-color: $c-page;
+  background: $c-page;
+  min-height: 100vh;
 }
 
 ::selection {
   background-color: $c-primary;
   color: $c-secondary;
 }
+
+@import "./font";

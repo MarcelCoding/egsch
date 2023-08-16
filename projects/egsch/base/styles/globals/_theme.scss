@@ -1,11 +1,11 @@
 @mixin theme(
   $c-primary: #f16827,
-  $c-primary-l: #f16827,
-  $c-primary-d: #f16827,
+  $c-primary-l: #ef7743,
+  $c-primary-d: #9d3a0a,
 
-  $c-secondary: #000,
-  $c-secondary-l: #000,
-  $c-secondary-d: #000,
+  $c-secondary: #2c2c31,
+  $c-secondary-l: #3b3b42,
+  $c-secondary-d: #1e1e20,
 
   $c-ternary: #fff,
   $c-ternary-l: #fff,
@@ -26,14 +26,21 @@
   $f-size-mono: 1rem,
   $f-weight: 400,
   $f-weight-bold: 700,
+  $f-color: var(--c-secondary),
+  $f-color-dark: var(--c-ternary),
 
   $s-unit: 1rem,
   $s-content: calc(1000 * var(--s-unit) / 16),
   $s-padding: var(--s-unit),
 
-  $c-page: #fff,
-  $c-card: #fff,
-  $c-card-secondary: #fff,
+  $c-page: var(--c-ternary-d),
+  $c-page-dark: var(--c-secondary-d),
+
+  $c-card: var(--c-ternary),
+  $c-card-dark: var(--c-secondary),
+  $c-card-secondary: var(--c-ternary-l),
+  $c-card-secondary-dark: var(--c-secondary-l),
+
   $c-control: #fff,
   $c-control-secondary: #fff,
   $c-control-ternary: #fff,
@@ -66,6 +73,7 @@
     --f-size-mono: #{$f-size-mono};
     --f-weight: #{$f-weight};
     --f-weight-bold: #{$f-weight-bold};
+    --f-color: #{$f-color};
 
     --s-unit: #{$s-unit};
     --s-content: #{$s-content};
@@ -77,5 +85,12 @@
     --c-control: #{$c-control};
     --c-control-secondary: #{$c-control-secondary};
     --c-control-ternary: #{$c-control-ternary};
+
+    @media(prefers-color-scheme: dark) {
+      --c-page: #{$c-page-dark};
+      --c-card: #{$c-card-dark};
+      --c-card-secondary: #{$c-card-secondary-dark};
+      --f-color: #{$f-color-dark};
+    }
   }
 }

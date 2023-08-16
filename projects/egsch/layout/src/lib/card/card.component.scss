@@ -1,13 +1,10 @@
 @import "vars";
+@import "mixins";
 
 :host {
-  display: block;
-  padding: $s-unit;
-}
-
-.x {
   background-color: $c-card;
-  height: 6rem;
   border-radius: 0.4rem;
   border: solid 0.1rem $c-card-secondary;
+  padding: $s-unit;
+  @include container();
 }

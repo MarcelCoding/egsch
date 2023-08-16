@@ -63,6 +63,10 @@
               "projects/showcase/src/assets"
             ],
             "styles": [
+              "node_modules/@fontsource/dm-sans/400.css",
+              "node_modules/@fontsource/dm-sans/400-italic.css",
+              "node_modules/@fontsource/dm-sans/700.css",
+              "node_modules/@fontsource/dm-sans/700-italic.css",
               "projects/showcase/src/styles.scss"
             ],
             "stylePreprocessorOptions": {
@@ -131,6 +135,10 @@
               "projects/showcase/src/assets"
             ],
             "styles": [
+              "node_modules/@fontsource/dm-sans/400.css",
+              "node_modules/@fontsource/dm-sans/400-italic.css",
+              "node_modules/@fontsource/dm-sans/700.css",
+              "node_modules/@fontsource/dm-sans/700-italic.css",
               "projects/showcase/src/styles.scss"
             ],
             "stylePreprocessorOptions": {
